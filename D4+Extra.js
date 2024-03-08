@@ -158,7 +158,19 @@ console.log(giveMeRandom(5))
  La funzione deve inoltre ritornare la somma di tutti i valori maggiori di 5.
 */
 
-
+const checkArray = function(arr){
+    let newArray = 0
+    for(let i=0; i<arr.length;i++){
+        if(arr[i] > 5){
+            console.log("il valore", arr[i], " è maggiore di 5")
+            newArray= newArray + arr[i]
+        }
+    }
+    console.log("la somma dei valori maggiori di 5 è: ", newArray)
+    return newArray
+}
+let arrayCasuale = giveMeRandom(5)
+console.log(checkArray(arrayCasuale))
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -224,7 +236,15 @@ console.log(addToShoppingCart(oggetto1))
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "maxShoppingCart" che riceve l'array "shoppingCart" e ritorna l'oggetto più costoso in esso contenuto.
 */
-
+const maxShoppingCart = function(){
+    let newArr = []
+    for(let i = 0; i <shoppingCart.length;i++){
+        let priceArr= shoppingCart[i].price
+        newArr.push(priceArr)
+    }
+    return Math.max(...newArr)
+}
+console.log("Il prezzo più alto è: ", maxShoppingCart())
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* EXTRA 5
@@ -247,17 +267,62 @@ console.log (latestShoppingCart())
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const loopUntil = function(num){
+    if(num>10){
+        console.log("parametro non valido")
+    }
+    let successCount = 0
+    
+    while(successCount<3){
+        let count = Math.floor(Math.random()*10)
+        console.log("Numero casuale:", count);
+       if(
+        count === num ){
+        successCount++
+       }
+       else{successCount =0}
+    }
+    }
+console.log(loopUntil(3))
+
 /* EXTRA 7
 Crea una funzione chiamata "average" che riceve un array come parametro e ne ritorna la media aritmetica. La funzione salta automaticamente i valori non numerici nell'array.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const mediaArotmetica = [34, 55, 66, 77, 88, 90]
+
+const average= function(mediaArotmetica){
+    let arrMedia= 0
+    for(let i=0;i<mediaArotmetica.length;i++){
+        arrMedia= arrMedia+mediaArotmetica[i]
+       
+    }
+     arrMedia = arrMedia/ mediaArotmetica.length
+    return arrMedia
+}
+console.log(average(mediaArotmetica))
 
 /* EXTRA 8
  Crea una funzione chiamata "longest" che trova la stringa più lunga all'interno di un array di stringhe fornito come parametro.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+let arrStringhe = ["maria", "filippo", "carlo", "giacomo"]
+
+
+const longest= function(arrStringhe){
+    let stringaLunga= ""
+    for(let i = 0; i<arrStringhe.length;i++){
+       if(arrStringhe[i].length > stringaLunga.length){
+        stringaLunga = arrStringhe[i]
+       }
+
+    }
+    console.log("La stringa piu lunga è:", stringaLunga)
+    return stringaLunga
+}
+longest(arrStringhe)
 
 /* EXTRA 9
  Crea una funzione per creare un filtro anti-spam per la tua casella email. La funzione riceve un parametro stringa chiamato "emailContent", e torna un valore booleano.
@@ -266,9 +331,20 @@ Crea una funzione chiamata "average" che riceve un array come parametro e ne rit
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const antiSpam = function(emailContent){
+    if( 
+        emailContent.includes("SPAM") || emailContent.includes("SCAM")){
+            return false
+        }
+        else{return true}
+
+} 
+console.log(antiSpam("spam"))
+
 /* EXTRA 10
  Scrivi una funzione che riceve una data come parametro, e calcola il numero di giorni passati da quella data.
 */
+
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -281,3 +357,4 @@ Crea una funzione chiamata "average" che riceve un array come parametro e ne rit
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
